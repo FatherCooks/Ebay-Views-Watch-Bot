@@ -1,0 +1,4 @@
+requests==2.25
+names==0.3.0
+colorama==0.4.4
+bs4
