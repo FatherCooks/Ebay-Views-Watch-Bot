@@ -1,1 +1,0 @@
-This is a very simple credentials generator which generats randoms credentials such as names, passwords and phone numbers.
