@@ -14,13 +14,12 @@ from threading import Semaphore
 from colorama import Fore, Back, Style
 import logging
 import importlib.util
-sys.path.append("Utilities")
+sys.path.append("Utilities")                                                                   #Change How Module is Imported
 #import settings
 import credentials
 import get_proxy
 import data
 from requests import exceptions as requestsExceptions
-from Utilities.Captcha import FB_captcha
 
 
 init(autoreset=True)
