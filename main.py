@@ -104,7 +104,7 @@ class EBAY:
         threads = []
         i= 0
         with open('Config/created_accounts.txt', 'r') as f1:
-            for line in zip(f1): 
+            for line, in zip(f1): 
                 i +=1
                 self.sem.acquire()
                 email = line.split(":")[0]
