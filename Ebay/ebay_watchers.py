@@ -169,8 +169,8 @@ class Watch:
                 self.logged_in = False
         
                 payload = {
-                    'userid': "ludlamhalsy27@gmail.com",#self.email,
-                    'pass': "41Lavish__",#self.password,
+                    'userid': self.email,
+                    'pass': self.password,
                     'kmsi-unchecked': '1',
                     'kmsi': '1',
                     'i1': '',
