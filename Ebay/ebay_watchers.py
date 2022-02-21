@@ -76,7 +76,7 @@ class Watch:
 
                 csrf = json.loads('{'+token+'}')
                 mid = json.loads('{'+id+'}')
-                #print(csrf, mid)
+                
                 self.csrfToken = csrf["csrfAjaxToken"]
                 self.dfpmid = mid["dfpmid"]
                 #p = soup.find('div', {'id': 'srt'}).get('value')
@@ -190,7 +190,7 @@ class Watch:
                     'hbi': '0',
                     'lastAttemptMethod': 'password',
                     'showWebAuthnOptIn': '1',
-                    'mid': self.dfpmid,   #PARAM MAY CHANGE IN THE NEAR FUTURE
+                    'mid': self.dfpmid,   
                     'isRecgUser': 'false'
                     }
                 
