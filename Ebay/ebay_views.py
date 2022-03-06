@@ -30,7 +30,6 @@ class Views:
         self.URL = EBAY.URL
         self.task = i
         self.s = requests.Session()
-        #self.captcha = FB_captcha.v2.twoCaptcha()
         self.start()
         
 
@@ -55,8 +54,11 @@ class Views:
             try:
                 request = self.s.get(self.URL,headers=data.Headers.addViews, timeout=12,)
                 
+                if request.status_code == 200:
+                    self.lock.acquire()
+                    print(Fore.LIGHTMAGENTA_EX + f"[Task#: {self.task}]" ,Fore.BLUE + format(datetime.datetime.now()) , f"{Fore.GREEN}View Added Successfully")
+                    self.lock.release()
                 return
-                
         
             except requests.exceptions.ConnectionError as connectionerror:
                 self.lock.acquire()
@@ -67,6 +69,7 @@ class Views:
                 self.lock.acquire()
                 print(Fore.LIGHTMAGENTA_EX + f"[Task#: {self.task}]" ,Fore.BLUE + format(datetime.datetime.now()) , Fore.RED + "[TIMEOUT ERROR]", Fore.RED+str(timeout))
                 self.lock.release()
+                self.chooseProxy()
                 continue
             except requests.exceptions.RequestException as err:
                 self.lock.acquire()
