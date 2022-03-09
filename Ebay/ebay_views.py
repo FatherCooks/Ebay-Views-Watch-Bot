@@ -18,7 +18,6 @@ import credentials
 import get_proxy
 import data
 from requests import exceptions as requestsExceptions
-from Utilities.Captcha import FB_captcha
 
 
 init(autoreset=True)
